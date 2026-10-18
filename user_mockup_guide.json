@@ -1,0 +1,502 @@
+[
+  {
+    "code": "30P01F",
+    "name": "YUVARLAK FLİPTOP KOLONYA",
+    "volume": "30 ml",
+    "cap": "Flip-Top (F)",
+    "best_photo": "DSCF0320.png",
+    "photo_file_png": "seffaf_png/DSCF0320.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0320.jpg",
+    "all_photos_in_batch": [
+      "DSCF0319.png",
+      "DSCF0320.png",
+      "DSCF0321.png",
+      "DSCF0322.png"
+    ],
+    "note_card": "DSCF0323.JPG"
+  },
+  {
+    "code": "30P01S",
+    "name": "YUVARLAK SPREY KOLONYA",
+    "volume": "30 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0322.png",
+    "photo_file_png": "seffaf_png/DSCF0322.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0322.jpg",
+    "all_photos_in_batch": [
+      "DSCF0319.png",
+      "DSCF0320.png",
+      "DSCF0321.png",
+      "DSCF0322.png"
+    ],
+    "note_card": "DSCF0323.JPG"
+  },
+  {
+    "code": "45P01F",
+    "name": "YASSI FLİPTOP KOLONYA",
+    "volume": "45 ml",
+    "cap": "Flip-Top (F)",
+    "best_photo": "DSCF0360.png",
+    "photo_file_png": "seffaf_png/DSCF0360.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0360.jpg",
+    "all_photos_in_batch": [
+      "DSCF0360.png"
+    ],
+    "note_card": "DSCF0361.JPG"
+  },
+  {
+    "code": "50P01F",
+    "name": "YUVARLAK FLİPTOP KOLONYA",
+    "volume": "50 ml",
+    "cap": "Flip-Top (F)",
+    "best_photo": "DSCF0324.png",
+    "photo_file_png": "seffaf_png/DSCF0324.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0324.jpg",
+    "all_photos_in_batch": [
+      "DSCF0324.png",
+      "DSCF0325.png",
+      "DSCF0326.png"
+    ],
+    "note_card": "DSCF0327.JPG"
+  },
+  {
+    "code": "50P01S",
+    "name": "YUVARLAK SPREY KOLONYA",
+    "volume": "50 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0326.png",
+    "photo_file_png": "seffaf_png/DSCF0326.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0326.jpg",
+    "all_photos_in_batch": [
+      "DSCF0324.png",
+      "DSCF0325.png",
+      "DSCF0326.png"
+    ],
+    "note_card": "DSCF0327.JPG"
+  },
+  {
+    "code": "50P02F",
+    "name": "KAVİSLİ FLİPTOP KOLONYA",
+    "volume": "50 ml",
+    "cap": "Flip-Top (F)",
+    "best_photo": "DSCF0333.png",
+    "photo_file_png": "seffaf_png/DSCF0333.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0333.jpg",
+    "all_photos_in_batch": [
+      "DSCF0332.png",
+      "DSCF0333.png",
+      "DSCF0334.png",
+      "DSCF0335.png",
+      "DSCF0336.png"
+    ],
+    "note_card": "DSCF0337.JPG"
+  },
+  {
+    "code": "50P02S",
+    "name": "KAVİSLİ SPREY KOLONYA",
+    "volume": "50 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0332.png",
+    "photo_file_png": "seffaf_png/DSCF0332.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0332.jpg",
+    "all_photos_in_batch": [
+      "DSCF0332.png",
+      "DSCF0333.png",
+      "DSCF0334.png",
+      "DSCF0335.png",
+      "DSCF0336.png"
+    ],
+    "note_card": "DSCF0337.JPG"
+  },
+  {
+    "code": "70P01F",
+    "name": "PRİZMA FLİPTOP KOLONYA",
+    "volume": "70 ml",
+    "cap": "Flip-Top (F)",
+    "best_photo": "DSCF0328.png",
+    "photo_file_png": "seffaf_png/DSCF0328.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0328.jpg",
+    "all_photos_in_batch": [
+      "DSCF0328.png",
+      "DSCF0329.png",
+      "DSCF0330.png"
+    ],
+    "note_card": "DSCF0331.JPG"
+  },
+  {
+    "code": "70P01S",
+    "name": "PRİZMA SPREY KOLONYA",
+    "volume": "70 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0330.png",
+    "photo_file_png": "seffaf_png/DSCF0330.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0330.jpg",
+    "all_photos_in_batch": [
+      "DSCF0328.png",
+      "DSCF0329.png",
+      "DSCF0330.png"
+    ],
+    "note_card": "DSCF0331.JPG"
+  },
+  {
+    "code": "100P1F",
+    "name": "YUVARLAK FLİPTOP KOLONYA",
+    "volume": "100 ml",
+    "cap": "Flip-Top (F)",
+    "best_photo": "DSCF0340.png",
+    "photo_file_png": "seffaf_png/DSCF0340.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0340.jpg",
+    "all_photos_in_batch": [
+      "DSCF0340.png"
+    ],
+    "note_card": "DSCF0341.JPG"
+  },
+  {
+    "code": "100P1S",
+    "name": "YUVARLAK SPREY KOLONYA",
+    "volume": "100 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0338.png",
+    "photo_file_png": "seffaf_png/DSCF0338.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0338.jpg",
+    "all_photos_in_batch": [
+      "DSCF0338.png"
+    ],
+    "note_card": "DSCF0339.JPG"
+  },
+  {
+    "code": "100P2F",
+    "name": "YASSI FLİPTOP KOLONYA",
+    "volume": "100 ml",
+    "cap": "Flip-Top (F)",
+    "best_photo": "DSCF0417.png",
+    "photo_file_png": "seffaf_png/DSCF0417.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0417.jpg",
+    "all_photos_in_batch": [
+      "DSCF0416.png",
+      "DSCF0417.png",
+      "DSCF0418.png"
+    ],
+    "note_card": "DSCF0419.JPG"
+  },
+  {
+    "code": "100P2S",
+    "name": "YASSI SPREY KOLONYA",
+    "volume": "100 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0420.png",
+    "photo_file_png": "seffaf_png/DSCF0420.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0420.jpg",
+    "all_photos_in_batch": [
+      "DSCF0420.png",
+      "DSCF0421.png"
+    ],
+    "note_card": "DSCF0422.JPG"
+  },
+  {
+    "code": "150P1F",
+    "name": "YUVARLAK FLİPTOP KOLONYA",
+    "volume": "150 ml",
+    "cap": "Flip-Top (F)",
+    "best_photo": "DSCF0423.png",
+    "photo_file_png": "seffaf_png/DSCF0423.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0423.jpg",
+    "all_photos_in_batch": [
+      "DSCF0423.png",
+      "DSCF0424.png",
+      "DSCF0425.png",
+      "DSCF0426.png",
+      "DSCF0427.png"
+    ],
+    "note_card": "DSCF0428.JPG"
+  },
+  {
+    "code": "150P1S",
+    "name": "YUVARLAK SPREY KOLONYA",
+    "volume": "150 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0342.png",
+    "photo_file_png": "seffaf_png/DSCF0342.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0342.jpg",
+    "all_photos_in_batch": [
+      "DSCF0342.png",
+      "DSCF0343.png",
+      "DSCF0344.png"
+    ],
+    "note_card": "DSCF0345.JPG"
+  },
+  {
+    "code": "200P1S",
+    "name": "YUVARLAK SPREY KOLONYA",
+    "volume": "200 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0432.png",
+    "photo_file_png": "seffaf_png/DSCF0432.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0432.jpg",
+    "all_photos_in_batch": [
+      "DSCF0432.png",
+      "DSCF0433.png",
+      "DSCF0434.png"
+    ],
+    "note_card": "DSCF0435.JPG"
+  },
+  {
+    "code": "200P1F",
+    "name": "YUVARLAK FLİPTOP KOLONYA",
+    "volume": "200 ml",
+    "cap": "Flip-Top (F)",
+    "best_photo": "DSCF0436.png",
+    "photo_file_png": "seffaf_png/DSCF0436.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0436.jpg",
+    "all_photos_in_batch": [
+      "DSCF0436.png",
+      "DSCF0437.png",
+      "DSCF0438.png",
+      "DSCF0439.png",
+      "DSCF0440.png"
+    ],
+    "note_card": "DSCF0441.JPG"
+  },
+  {
+    "code": "400P1F",
+    "name": "DİKDÖRTGEN FLİPTOP KOLONYA",
+    "volume": "400 ml",
+    "cap": "Flip-Top (F)",
+    "best_photo": "DSCF0442.png",
+    "photo_file_png": "seffaf_png/DSCF0442.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0442.jpg",
+    "all_photos_in_batch": [
+      "DSCF0442.png",
+      "DSCF0443.png",
+      "DSCF0444.png"
+    ],
+    "note_card": "DSCF0445.JPG"
+  },
+  {
+    "code": "20K01S",
+    "name": "SLİM KLASİK SPREY KOLONYA",
+    "volume": "20 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0451.png",
+    "photo_file_png": "seffaf_png/DSCF0451.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0451.jpg",
+    "all_photos_in_batch": [
+      "DSCF0449.png",
+      "DSCF0450.png",
+      "DSCF0451.png",
+      "DSCF0452.png",
+      "DSCF0453.png",
+      "DSCF0454.png",
+      "DSCF0455.png"
+    ],
+    "note_card": "DSCF0456.JPG"
+  },
+  {
+    "code": "20K02S",
+    "name": "SLİM KAPAKLI SPREY KOLONYA",
+    "volume": "20 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0458.png",
+    "photo_file_png": "seffaf_png/DSCF0458.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0458.jpg",
+    "all_photos_in_batch": [
+      "DSCF0457.png",
+      "DSCF0458.png",
+      "DSCF0459.png",
+      "DSCF0460.png",
+      "DSCF0461.png",
+      "DSCF0462.png",
+      "DSCF0463.png",
+      "DSCF0464.png"
+    ],
+    "note_card": "DSCF0465.JPG"
+  },
+  {
+    "code": "25K01S",
+    "name": "SLİM ÜÇGEN SPREY KOLONYA",
+    "volume": "25 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0480.png",
+    "photo_file_png": "seffaf_png/DSCF0480.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0480.jpg",
+    "all_photos_in_batch": [
+      "DSCF0480.png",
+      "DSCF0481.png",
+      "DSCF0482.png",
+      "DSCF0483.png",
+      "DSCF0484.png",
+      "DSCF0485.png",
+      "DSCF0486.png"
+    ],
+    "note_card": "DSCF0487.JPG"
+  },
+  {
+    "code": "45K01S",
+    "name": "SLİM MEDİUM SPREY KOLONYA",
+    "volume": "45 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0488.png",
+    "photo_file_png": "seffaf_png/DSCF0488.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0488.jpg",
+    "all_photos_in_batch": [
+      "DSCF0488.png",
+      "DSCF0489.png",
+      "DSCF0490.png",
+      "DSCF0491.png",
+      "DSCF0492.png",
+      "DSCF0493.png"
+    ],
+    "note_card": "DSCF0494.JPG"
+  },
+  {
+    "code": "50K01S",
+    "name": "SLİM MAXİ SPREY KOLONYA",
+    "volume": "50 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0491.png",
+    "photo_file_png": "seffaf_png/DSCF0491.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0491.jpg",
+    "all_photos_in_batch": [
+      "DSCF0488.png",
+      "DSCF0489.png",
+      "DSCF0490.png",
+      "DSCF0491.png",
+      "DSCF0492.png",
+      "DSCF0493.png"
+    ],
+    "note_card": "DSCF0494.JPG"
+  },
+  {
+    "code": "10C01S",
+    "name": "PEN MİNİ CAM SPREY",
+    "volume": "10 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0497.png",
+    "photo_file_png": "seffaf_png/DSCF0497.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0497.jpg",
+    "all_photos_in_batch": [
+      "DSCF0497.png",
+      "DSCF0498.png"
+    ],
+    "note_card": "DSCF0499.JPG"
+  },
+  {
+    "code": "50C01S",
+    "name": "LINEA 50 CAM SPREY",
+    "volume": "50 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0500.png",
+    "photo_file_png": "seffaf_png/DSCF0500.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0500.jpg",
+    "all_photos_in_batch": [
+      "DSCF0500.png",
+      "DSCF0501.png"
+    ],
+    "note_card": "DSCF0502.JPG"
+  },
+  {
+    "code": "100C1S",
+    "name": "LINEA 100 CAM SPREY",
+    "volume": "100 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0503.png",
+    "photo_file_png": "seffaf_png/DSCF0503.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0503.jpg",
+    "all_photos_in_batch": [
+      "DSCF0503.png",
+      "DSCF0504.png"
+    ],
+    "note_card": "DSCF0505.JPG"
+  },
+  {
+    "code": "200C1D",
+    "name": "DIAMOND 200 CAM DİKME",
+    "volume": "200 ml",
+    "cap": "Dökme / Dikme (D)",
+    "best_photo": "DSCF0506.png",
+    "photo_file_png": "seffaf_png/DSCF0506.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0506.jpg",
+    "all_photos_in_batch": [
+      "DSCF0506.png",
+      "DSCF0507.png",
+      "DSCF0508.png"
+    ],
+    "note_card": "DSCF0510.JPG"
+  },
+  {
+    "code": "100C1D",
+    "name": "DIAMOND 100 CAM DİKME",
+    "volume": "100 ml",
+    "cap": "Dökme / Dikme (D)",
+    "best_photo": "DSCF0511.png",
+    "photo_file_png": "seffaf_png/DSCF0511.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0511.jpg",
+    "all_photos_in_batch": [
+      "DSCF0511.png",
+      "DSCF0512.png",
+      "DSCF0513.png"
+    ],
+    "note_card": "DSCF0514.JPG"
+  },
+  {
+    "code": "200C2D",
+    "name": "RIGA 200 CAM DİKME",
+    "volume": "200 ml",
+    "cap": "Dökme / Dikme (D)",
+    "best_photo": "DSCF0515.png",
+    "photo_file_png": "seffaf_png/DSCF0515.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0515.jpg",
+    "all_photos_in_batch": [
+      "DSCF0515.png",
+      "DSCF0516.png"
+    ],
+    "note_card": "DSCF0517.JPG"
+  },
+  {
+    "code": "100C2S",
+    "name": "RIGA 100 CAM SPREY",
+    "volume": "100 ml",
+    "cap": "Sprey (S)",
+    "best_photo": "DSCF0518.png",
+    "photo_file_png": "seffaf_png/DSCF0518.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0518.jpg",
+    "all_photos_in_batch": [
+      "DSCF0518.png",
+      "DSCF0519.png"
+    ],
+    "note_card": "DSCF0520.JPG"
+  },
+  {
+    "code": "200C3D",
+    "name": "PRİZMA 200 CAM DİKME",
+    "volume": "200 ml",
+    "cap": "Dökme / Dikme (D)",
+    "best_photo": "DSCF0521.png",
+    "photo_file_png": "seffaf_png/DSCF0521.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0521.jpg",
+    "all_photos_in_batch": [
+      "DSCF0521.png",
+      "DSCF0522.png"
+    ],
+    "note_card": "DSCF0523.JPG"
+  },
+  {
+    "code": "250C1D",
+    "name": "SIGNATURE 250 CAM DİKME",
+    "volume": "250 ml",
+    "cap": "Dökme / Dikme (D)",
+    "best_photo": "DSCF0524.png",
+    "photo_file_png": "seffaf_png/DSCF0524.png",
+    "photo_file_jpg": "beyaz_arka_plan/DSCF0524.jpg",
+    "all_photos_in_batch": [
+      "DSCF0524.png",
+      "DSCF0525.png",
+      "DSCF0526.png",
+      "DSCF0527.png",
+      "DSCF0528.png",
+      "DSCF0529.png",
+      "DSCF0530.png"
+    ],
+    "note_card": "DSCF0531.JPG"
+  }
+]

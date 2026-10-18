@@ -1,0 +1,16 @@
+# Heavy original camera files & raw downloads
+drive-download-20261018T133157Z-1-001/
+seffaf_png/
+beyaz_arka_plan/
+
+# Compiled PDFs (too large for git & generated on demand)
+*.pdf
+
+# Python bytecode & temp
+__pycache__/
+*.pyc
+*.pyo
+
+# Scratch scripts
+test_*.py
+check_*.py
