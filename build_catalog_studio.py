@@ -259,7 +259,7 @@ html = f"""<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>PROMKOL 2027 | Katalog Stüdyosu & Canlı Düzenleyici</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1233,13 +1233,497 @@ html = f"""<!DOCTYPE html>
             to {{ transform: translateY(0); opacity: 1; }}
         }}
 
+        /* ================= MOBILE RESPONSIVE ENGINE (Akıllı Telefon ve Tablet Uyumu) ================= */
+        @media screen and (max-width: 900px) {{
+            /* General Reset & Fluid Mobile Canvas */
+            body {{
+                overflow-x: hidden !important;
+                padding-bottom: 75px !important;
+                -webkit-tap-highlight-color: transparent;
+            }}
+
+            /* Mobile Top Command Bar */
+            .catalog-topbar {{
+                height: 54px !important;
+                padding: 0 10px !important;
+            }}
+
+            .topbar-sub {{
+                display: none !important;
+            }}
+
+            .topbar-main-title {{
+                font-size: 13px !important;
+                letter-spacing: 0 !important;
+            }}
+
+            .badge-live {{
+                display: none !important;
+            }}
+
+            .topbar-logo-img {{
+                height: 28px !important;
+            }}
+
+            .topbar-center {{
+                padding: 2px !important;
+                gap: 2px !important;
+            }}
+
+            .topbar-btn {{
+                padding: 4px 8px !important;
+                font-size: 11px !important;
+            }}
+
+            .topbar-right .btn-action-studio {{
+                display: none !important;
+            }}
+
+            .topbar-right .btn-save-disk,
+            .topbar-right .btn-sidebar-toggle {{
+                display: inline-flex !important;
+                padding: 5px 9px !important;
+                font-size: 11px !important;
+            }}
+
+            /* Canvas Container on Mobile */
+            .catalog-container {{
+                margin-top: 54px !important;
+                margin-left: 0 !important;
+                padding: 10px 8px 30px 8px !important;
+                gap: 16px !important;
+                width: 100% !important;
+                max-width: 100vw !important;
+                box-sizing: border-box !important;
+            }}
+
+            body.sidebar-open .catalog-container {{
+                margin-left: 0 !important;
+            }}
+
+            /* A4 Page Transforms into Fluid Mobile Card */
+            .a4-page {{
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                min-height: auto !important;
+                border-radius: 14px !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+                overflow: visible !important;
+                margin: 0 0 16px 0 !important;
+            }}
+
+            /* Page Actions Bar (Always Visible on Mobile) */
+            .page-actions-bar {{
+                position: static !important;
+                opacity: 1 !important;
+                width: 100% !important;
+                border-radius: 12px 12px 0 0 !important;
+                background: rgba(15, 23, 42, 0.95) !important;
+                padding: 8px 10px !important;
+                display: flex !important;
+                justify-content: space-between !important;
+                box-sizing: border-box !important;
+            }}
+
+            .page-action-btn {{
+                padding: 5px 9px !important;
+                font-size: 11px !important;
+            }}
+
+            /* Page Header & Footer */
+            .page-header {{
+                height: auto !important;
+                padding: 10px 12px !important;
+                flex-wrap: wrap !important;
+                gap: 6px !important;
+            }}
+
+            .header-slogan {{
+                font-size: 14px !important;
+            }}
+
+            .page-body {{
+                padding: 12px 10px !important;
+                height: auto !important;
+                gap: 16px !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }}
+
+            .page-footer {{
+                height: auto !important;
+                padding: 8px 12px !important;
+                font-size: 10px !important;
+                flex-wrap: wrap !important;
+                gap: 4px !important;
+            }}
+
+            /* Product Row Layout: Vertical Responsive Stack */
+            .ilpen-product-row {{
+                display: flex !important;
+                flex-direction: column !important;
+                height: auto !important;
+                gap: 12px !important;
+                padding: 10px 0 16px 0 !important;
+                border-bottom: 2px dashed var(--pk-gray-300) !important;
+            }}
+
+            /* Product Row Actions Bar (Always Visible on Touch) */
+            .row-actions-bar {{
+                position: static !important;
+                opacity: 1 !important;
+                transform: none !important;
+                width: 100% !important;
+                display: flex !important;
+                justify-content: space-between !important;
+                background: #0F172A !important;
+                border-radius: 8px !important;
+                padding: 6px 10px !important;
+                margin-bottom: 8px !important;
+                box-sizing: border-box !important;
+            }}
+
+            .row-action-btn {{
+                padding: 5px 9px !important;
+                font-size: 11px !important;
+            }}
+
+            /* Visual Column on Mobile */
+            .ilpen-visual-col {{
+                width: 100% !important;
+                box-sizing: border-box !important;
+                padding: 12px 6px !important;
+            }}
+
+            .ilpen-bottle-podium {{
+                height: 220px !important;
+                width: 100% !important;
+            }}
+
+            .ilpen-dual-podium-wrap {{
+                height: 180px !important;
+                gap: 6px !important;
+            }}
+
+            .visual-tag-bar {{
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 4px !important;
+            }}
+
+            /* Image Quick Tools: Always Accessible on Touch */
+            .img-quick-tools {{
+                position: static !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+                transform: none !important;
+                width: 100% !important;
+                display: flex !important;
+                justify-content: center !important;
+                gap: 4px !important;
+                margin-top: 8px !important;
+                padding: 6px 8px !important;
+                border-radius: 8px !important;
+                background: rgba(15, 23, 42, 0.95) !important;
+                box-sizing: border-box !important;
+                flex-wrap: wrap !important;
+            }}
+
+            .img-tool-btn {{
+                padding: 6px 9px !important;
+                font-size: 11px !important;
+            }}
+
+            .resize-corner-handle {{
+                display: none !important;
+            }}
+
+            /* Typography & Inputs */
+            .ilpen-prod-title {{
+                font-size: 18px !important;
+            }}
+
+            .ilpen-desc {{
+                font-size: 12px !important;
+                line-height: 1.45 !important;
+            }}
+
+            /* Specs Grid: 2 Columns on Mobile */
+            .ilpen-specs-grid {{
+                grid-template-columns: 1fr 1fr !important;
+                gap: 6px !important;
+                padding: 8px !important;
+            }}
+
+            .spec-del-btn {{
+                opacity: 1 !important;
+                width: 20px !important;
+                height: 20px !important;
+                font-size: 13px !important;
+            }}
+
+            .btn-add-spec {{
+                padding: 6px 10px !important;
+                font-size: 11px !important;
+            }}
+
+            /* Cap Badges on Mobile */
+            .ilpen-caps-flex {{
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 8px !important;
+            }}
+
+            .ilpen-cap-badge {{
+                width: 100% !important;
+                min-width: 0 !important;
+                padding: 8px !important;
+                box-sizing: border-box !important;
+            }}
+
+            .cap-badge-actions {{
+                opacity: 1 !important;
+            }}
+
+            .cap-act-btn {{
+                width: 22px !important;
+                height: 22px !important;
+                font-size: 11px !important;
+            }}
+
+            .color-dot {{
+                width: 15px !important;
+                height: 15px !important;
+            }}
+
+            .btn-add-color-dot {{
+                width: 16px !important;
+                height: 16px !important;
+                font-size: 11px !important;
+            }}
+
+            /* Cover Page Mobile Styling */
+            .divider-page {{
+                height: auto !important;
+                min-height: 520px !important;
+                padding: 24px 16px !important;
+                box-sizing: border-box !important;
+            }}
+
+            .divider-header {{
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 8px !important;
+                margin-bottom: 20px !important;
+            }}
+
+            .divider-logo {{
+                height: 50px !important;
+            }}
+
+            .divider-slogan {{
+                font-size: 24px !important;
+            }}
+
+            .divider-num {{
+                font-size: 54px !important;
+            }}
+
+            .divider-title {{
+                font-size: 24px !important;
+                line-height: 1.15 !important;
+            }}
+
+            .divider-desc {{
+                font-size: 13px !important;
+            }}
+
+            .cover-hero-tagline {{
+                font-size: 16px !important;
+            }}
+
+            .cover-sub-slogan {{
+                font-size: 20px !important;
+            }}
+
+            .cover-usp-badges {{
+                flex-direction: column !important;
+                gap: 6px !important;
+            }}
+
+            .divider-footer {{
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 6px !important;
+                padding-top: 16px !important;
+            }}
+
+            /* TOC Page Mobile Styling */
+            .toc-page {{
+                padding: 20px 14px !important;
+                height: auto !important;
+                box-sizing: border-box !important;
+            }}
+
+            .toc-brand-bar {{
+                margin-bottom: 16px !important;
+            }}
+
+            .toc-hero-num {{
+                font-size: 34px !important;
+            }}
+
+            .toc-hero-title {{
+                font-size: 18px !important;
+            }}
+
+            .toc-hero-line {{
+                margin: 8px 0 16px 0 !important;
+            }}
+
+            .toc-grid {{
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+                margin-bottom: 16px !important;
+            }}
+
+            .toc-about-box {{
+                margin-top: 16px !important;
+                padding: 14px !important;
+            }}
+
+            /* SLIDE-UP BOTTOM SHEET FOR MEDIA GALLERY */
+            .media-sidebar {{
+                top: auto !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 82vh !important;
+                max-height: 82vh !important;
+                border-radius: 20px 20px 0 0 !important;
+                border-right: none !important;
+                border-top: 2px solid var(--pk-lime) !important;
+                transform: translateY(100%) !important;
+                z-index: 100001 !important;
+                box-shadow: 0 -10px 40px rgba(0,0,0,0.8) !important;
+            }}
+
+            .media-sidebar:not(.collapsed) {{
+                transform: translateY(0) !important;
+            }}
+
+            .sheet-pull-bar {{
+                width: 44px;
+                height: 5px;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 3px;
+                margin: 8px auto 4px auto;
+            }}
+
+            .sidebar-header {{
+                padding: 8px 16px !important;
+            }}
+
+            .sidebar-search-input {{
+                font-size: 16px !important; /* Prevents iOS auto-zoom */
+            }}
+
+            /* Backdrop Overlay */
+            .sidebar-backdrop {{
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.65);
+                backdrop-filter: blur(4px);
+                z-index: 100000;
+            }}
+
+            .sidebar-backdrop.active {{
+                display: block;
+            }}
+
+            /* STICKY MOBILE BOTTOM BAR */
+            .mobile-bottom-bar {{
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 60px;
+                background: rgba(11, 19, 32, 0.98);
+                backdrop-filter: blur(16px);
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+                display: flex !important;
+                align-items: center;
+                justify-content: space-around;
+                z-index: 99990;
+                padding: 0 4px;
+                padding-bottom: max(0px, env(safe-area-inset-bottom));
+                box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+            }}
+
+            .mob-nav-btn {{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: transparent;
+                border: none;
+                color: #CBD5E1;
+                font-size: 10px;
+                font-weight: 700;
+                gap: 3px;
+                padding: 6px 10px;
+                cursor: pointer;
+                border-radius: 8px;
+                touch-action: manipulation;
+                transition: all 0.2s ease;
+                min-width: 60px;
+            }}
+
+            .mob-nav-btn:active {{
+                transform: scale(0.92);
+                color: #FFFFFF;
+                background: rgba(255, 255, 255, 0.1);
+            }}
+
+            .mob-nav-btn.primary {{
+                background: #2563EB;
+                color: #FFFFFF;
+                box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+            }}
+
+            .mob-nav-icon {{
+                font-size: 17px;
+                line-height: 1;
+            }}
+        }}
+
+        @media screen and (min-width: 901px) {{
+            .mobile-bottom-bar {{
+                display: none !important;
+            }}
+            .sidebar-backdrop {{
+                display: none !important;
+            }}
+            .sheet-pull-bar {{
+                display: none !important;
+            }}
+        }}
+
         /* PRINT MEDIA STYLES - ZERO MARGIN, 100% PURE A4 */
         @media print {{
             body {{
                 background: transparent !important;
+                padding-bottom: 0 !important;
             }}
             .catalog-topbar,
             .media-sidebar,
+            .mobile-bottom-bar,
+            .sidebar-backdrop,
+            .sheet-pull-bar,
             .row-actions-bar,
             .page-actions-bar,
             .img-quick-tools,
@@ -1264,10 +1748,55 @@ html = f"""<!DOCTYPE html>
                 min-height: 297mm !important;
                 margin: 0 !important;
                 box-shadow: none !important;
+                border-radius: 0 !important;
                 page-break-after: always !important;
                 break-after: page !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
+            }}
+            .ilpen-product-row {{
+                display: grid !important;
+                grid-template-columns: 1.15fr 0.85fr !important;
+                height: calc((297mm - 145px) / 2) !important;
+                padding: 12px 0 !important;
+                border-bottom: 1px dashed var(--pk-gray-200) !important;
+            }}
+            .ilpen-specs-grid {{
+                grid-template-columns: repeat(3, 1fr) !important;
+                display: grid !important;
+            }}
+            .ilpen-caps-flex {{
+                display: flex !important;
+                flex-direction: row !important;
+            }}
+            .ilpen-cap-badge {{
+                flex: 1 !important;
+                min-width: 130px !important;
+            }}
+            .page-header {{
+                height: 65px !important;
+                padding: 0 40px !important;
+            }}
+            .page-body {{
+                padding: 24px 40px !important;
+                height: calc(297mm - 105px) !important;
+            }}
+            .page-footer {{
+                height: 40px !important;
+                padding: 0 40px !important;
+            }}
+            .divider-page {{
+                height: 297mm !important;
+                min-height: 297mm !important;
+                padding: 60px !important;
+            }}
+            .toc-page {{
+                height: 297mm !important;
+                min-height: 297mm !important;
+                padding: 50px !important;
+            }}
+            .toc-grid {{
+                grid-template-columns: 1fr 1fr !important;
             }}
         }}
 
@@ -1906,6 +2435,8 @@ html = f"""<!DOCTYPE html>
     </style>
 </head>
 <body class="sidebar-open">
+    <!-- Backdrop Overlay for Mobile Bottom Sheet -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeSidebar()"></div>
 
     <!-- STUDIO TOP COMMAND BAR -->
     <header class="catalog-topbar">
@@ -1958,8 +2489,9 @@ html = f"""<!DOCTYPE html>
         </div>
     </header>
 
-    <!-- STUDIO LEFT MEDIA SIDEBAR -->
+    <!-- STUDIO LEFT MEDIA SIDEBAR (Desktop Drawer / Mobile Slide-up Bottom Sheet) -->
     <aside class="media-sidebar" id="mediaSidebar">
+        <div class="sheet-pull-bar"></div>
         <div class="sidebar-header">
             <div class="sidebar-title">
                 <span>📸 Fotoğraf & Mockup Kütüphanesi</span>
@@ -2649,18 +3181,53 @@ html += f"""
             }}
         }}
 
-        // Sidebar Toggle
-        function toggleSidebar() {{
+        // Sidebar / Mobile Bottom Sheet Handlers
+        function openSidebar() {{
+            isSidebarOpen = true;
             const sidebar = document.getElementById('mediaSidebar');
-            const body = document.body;
-            isSidebarOpen = !isSidebarOpen;
-            if (isSidebarOpen) {{
-                sidebar.classList.remove('collapsed');
-                body.classList.add('sidebar-open');
-            }} else {{
-                sidebar.classList.add('collapsed');
-                body.classList.remove('sidebar-open');
+            const backdrop = document.getElementById('sidebarBackdrop');
+            if (sidebar) sidebar.classList.remove('collapsed');
+            if (backdrop) backdrop.classList.add('active');
+            if (window.innerWidth > 900) {{
+                document.body.classList.add('sidebar-open');
             }}
+        }}
+
+        function closeSidebar() {{
+            isSidebarOpen = false;
+            const sidebar = document.getElementById('mediaSidebar');
+            const backdrop = document.getElementById('sidebarBackdrop');
+            if (sidebar) sidebar.classList.add('collapsed');
+            if (backdrop) backdrop.classList.remove('active');
+            document.body.classList.remove('sidebar-open');
+        }}
+
+        function toggleSidebar() {{
+            if (isSidebarOpen) {{
+                closeSidebar();
+            }} else {{
+                openSidebar();
+            }}
+        }}
+
+        // Mobile Quick Add Product Button
+        function quickAddProductToCatalog() {{
+            takeSnapshot();
+            const pages = document.querySelectorAll('.a4-page:not(.divider-page):not(.toc-page)');
+            if (pages.length === 0) {{
+                showToast('⚠️ Ürün eklenebilecek sayfa bulunamadı.');
+                return;
+            }}
+            let targetPage = pages[0];
+            const scrollPos = window.scrollY + 200;
+            pages.forEach(p => {{
+                if (p.offsetTop <= scrollPos) {{
+                    targetPage = p;
+                }}
+            }});
+            addNewProductRowToPage(targetPage);
+            targetPage.scrollIntoView({{ behavior: 'smooth', block: 'center' }});
+            showToast('➕ Yeni ürün kartı eklendi! Düzenlemek için üzerine dokunun.');
         }}
 
         // Active Target Image Selection
@@ -2672,14 +3239,14 @@ html += f"""
             activeTargetImg = imgEl;
             activeTargetImg.classList.add('editor-active-img');
 
-            if (!isSidebarOpen) toggleSidebar();
+            openSidebar();
 
             const parentBox = imgEl.closest('.editable-img-box');
             const label = (parentBox && parentBox.getAttribute('data-label')) || imgEl.alt || 'Katalog Görseli';
             document.getElementById('targetLabelText').textContent = label;
-            document.getElementById('targetDescText').innerHTML = 'Aşağıdaki galeriden herhangi bir fotoğrafa tıklayarak <b>' + label + '</b> görselini anında değiştirin veya alttaki butonlarla boyutunu büyütüp küçültün!';
+            document.getElementById('targetDescText').innerHTML = 'Aşağıdaki galeriden herhangi bir fotoğrafa dokunarak <b>' + label + '</b> görselini anında değiştirin!';
 
-            showToast('🎯 <b>' + label + '</b> seçildi! Sol panelden fotoğrafa tıklayın.');
+            showToast('🎯 <b>' + label + '</b> seçildi! Galeriden yeni görsel seçebilirsiniz.');
         }}
 
         function deselectActiveImg() {{
@@ -2688,7 +3255,7 @@ html += f"""
                 activeTargetImg = null;
             }}
             document.getElementById('targetLabelText').textContent = 'Henüz seçilmedi';
-            document.getElementById('targetDescText').textContent = 'Katalogdaki herhangi bir şişe, logo veya fotoğrafa tıklayın, ardından buradaki bir görsele tıklayarak anında değiştirin!';
+            document.getElementById('targetDescText').textContent = 'Katalogdaki herhangi bir şişe, logo veya fotoğrafa dokunun, ardından buradaki bir görsele dokunarak anında değiştirin!';
         }}
 
         function openSidebarForImg(imgEl) {{
@@ -2908,7 +3475,7 @@ html += f"""
         // Apply chosen asset to currently active image
         function applyAsset(path) {{
             if (!activeTargetImg) {{
-                showToast('⚠️ Önce katalogdan değiştirmek istediğiniz bir fotoğrafa veya logoya tıklayın!');
+                showToast('⚠️ Önce katalogdan değiştirmek istediğiniz bir fotoğrafa veya logoya dokunun!');
                 return;
             }}
             takeSnapshot();
@@ -2919,6 +3486,13 @@ html += f"""
                 if (activeTargetImg) activeTargetImg.style.transform = 'scale(' + (activeTargetImg.getAttribute('data-scale') || '1.0') + ')';
             }}, 200);
             showToast('✅ Görsel güncellendi: ' + path.split('/').pop());
+
+            // On mobile devices, automatically collapse bottom sheet drawer so user can view the result
+            if (window.innerWidth <= 900) {{
+                setTimeout(() => {{
+                    closeSidebar();
+                }}, 350);
+            }}
         }}
 
         // Render Sidebar Gallery
@@ -3250,6 +3824,13 @@ html += f"""
 
         // INIT ON LOAD (Check LocalStorage restoration)
         window.addEventListener('DOMContentLoaded', () => {{
+            // Mobile initial state: start collapsed on phone, open on desktop
+            if (window.innerWidth <= 900) {{
+                closeSidebar();
+            }} else {{
+                openSidebar();
+            }}
+
             const savedHtml = localStorage.getItem(STORAGE_KEY);
             if (savedHtml) {{
                 const canvas = document.getElementById('catalogContainer');
@@ -3264,6 +3845,30 @@ html += f"""
             takeSnapshot();
         }});
     </script>
+
+    <!-- STICKY MOBILE BOTTOM NAVIGATION BAR -->
+    <nav class="mobile-bottom-bar" id="mobileBottomBar">
+        <button class="mob-nav-btn" onclick="openSidebar()" title="Fotoğraf Seçici">
+            <span class="mob-nav-icon">📸</span>
+            <span class="mob-nav-lbl">Fotoğraf</span>
+        </button>
+        <button class="mob-nav-btn" onclick="quickAddProductToCatalog()" title="Yeni Ürün Ekle">
+            <span class="mob-nav-icon">➕</span>
+            <span class="mob-nav-lbl">Ürün Ekle</span>
+        </button>
+        <button class="mob-nav-btn primary" onclick="saveCatalogToDisk()" title="Kaydet">
+            <span class="mob-nav-icon">💾</span>
+            <span class="mob-nav-lbl">Kaydet</span>
+        </button>
+        <button class="mob-nav-btn" onclick="triggerPrint()" title="PDF İndir">
+            <span class="mob-nav-icon">🖨️</span>
+            <span class="mob-nav-lbl">PDF (A4)</span>
+        </button>
+        <button class="mob-nav-btn" onclick="studioUndo()" title="Geri Al">
+            <span class="mob-nav-icon">↩️</span>
+            <span class="mob-nav-lbl">Geri Al</span>
+        </button>
+    </nav>
 </body>
 </html>
 """
