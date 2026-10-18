@@ -48,7 +48,7 @@ def render_product_card(fam):
         
         color_list = get_cap_colors_for_variant(v["code"], fam["category"])
         color_dots_html = "".join([
-            f'<span class="color-dot" style="background:{c["hex"]};{"border:1px solid #CBD5E1;" if c.get("border") else ""}" title="{c["name"]} (Rengi değiştirmek için tıkla)" onclick="editColorDot(this)" oncontextmenu="deleteColorDot(event, this)"></span>'
+            f'<span class="color-dot" style="background:{c["hex"]};{"border:1px solid #CBD5E1;" if c.get("border") else ""}" title="{c["name"]} (Düzenlemek veya silmek için dokunun)" onclick="editColorDot(this, event)" oncontextmenu="deleteColorDot(event, this)"></span>'
             for c in color_list
         ])
         
@@ -1134,6 +1134,142 @@ html = f"""<!DOCTYPE html>
             box-shadow: 0 0 6px rgba(0,0,0,0.3);
         }}
 
+        .color-dot.active-dot {{
+            outline: 2px solid var(--pk-lime) !important;
+            outline-offset: 2px !important;
+            box-shadow: 0 0 12px rgba(145, 206, 23, 0.9) !important;
+            transform: scale(1.3) !important;
+        }}
+
+        /* COLOR DOT INTERACTIVE TOUCH POPOVER (Renklere Tıklayınca Açılan Menü) */
+        .color-menu-popover {{
+            position: fixed;
+            z-index: 100050;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(145, 206, 23, 0.5);
+            border-radius: 12px;
+            padding: 12px 14px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.75);
+            color: #FFFFFF;
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            width: 260px;
+            box-sizing: border-box;
+            animation: popover-scale-in 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }}
+
+        @keyframes popover-scale-in {{
+            from {{ opacity: 0; transform: scale(0.92) translateY(6px); }}
+            to {{ opacity: 1; transform: scale(1) translateY(0); }}
+        }}
+
+        .color-menu-popover.active {{
+            display: flex;
+        }}
+
+        .color-menu-header {{
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--pk-lime);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }}
+
+        .color-menu-close {{
+            background: transparent;
+            border: none;
+            color: #94A3B8;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            padding: 0 4px;
+            line-height: 1;
+        }}
+
+        .color-menu-close:hover {{
+            color: #FFFFFF;
+        }}
+
+        .color-presets-wrap {{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }}
+
+        .color-presets-lbl {{
+            font-size: 10px;
+            font-weight: 700;
+            color: #94A3B8;
+        }}
+
+        .color-presets-row {{
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            flex-wrap: wrap;
+        }}
+
+        .color-preset-item {{
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            box-sizing: border-box;
+        }}
+
+        .color-preset-item:hover, .color-preset-item:active {{
+            transform: scale(1.22);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }}
+
+        .color-menu-actions {{
+            display: flex;
+            gap: 6px;
+            margin-top: 4px;
+        }}
+
+        .color-act-btn {{
+            flex: 1;
+            padding: 7px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }}
+
+        .color-act-btn.pick-custom {{
+            background: var(--pk-lime);
+            color: var(--pk-navy-deep);
+        }}
+
+        .color-act-btn.pick-custom:hover {{
+            background: #A2E51A;
+        }}
+
+        .color-act-btn.delete-dot {{
+            background: rgba(220, 38, 38, 0.25);
+            color: #F87171;
+            border: 1px solid rgba(220, 38, 38, 0.4);
+        }}
+
+        .color-act-btn.delete-dot:hover {{
+            background: #DC2626;
+            color: #FFFFFF;
+        }}
+
         .btn-add-color-dot {{
             width: 12px;
             height: 12px;
@@ -1175,7 +1311,8 @@ html = f"""<!DOCTYPE html>
         body.preview-mode .btn-add-spec,
         body.preview-mode .btn-add-cap-badge,
         body.preview-mode .cap-badge-actions,
-        body.preview-mode .btn-add-color-dot {{
+        body.preview-mode .btn-add-color-dot,
+        body.preview-mode .color-menu-popover {{
             display: none !important;
         }}
 
@@ -1733,6 +1870,7 @@ html = f"""<!DOCTYPE html>
             .btn-add-cap-badge,
             .cap-badge-actions,
             .btn-add-color-dot,
+            .color-menu-popover,
             .toast-container {{
                 display: none !important;
             }}
@@ -2536,6 +2674,31 @@ html = f"""<!DOCTYPE html>
 
     <!-- TOAST CONTAINER -->
     <div class="toast-container" id="toastContainer"></div>
+
+    <!-- INTERACTIVE COLOR DOT TOUCH POPOVER / MODAL (Renklere Tıklayınca Açılan Menü) -->
+    <div class="color-menu-popover" id="colorMenuPopover">
+        <div class="color-menu-header">
+            <span>🎨 Kapak Rengi Düzenle</span>
+            <button class="color-menu-close" onclick="closeColorMenu()" title="Kapat">&times;</button>
+        </div>
+        <div class="color-presets-wrap">
+            <span class="color-presets-lbl">Hızlı Renkler:</span>
+            <div class="color-presets-row">
+                <span class="color-preset-item" style="background:#1E293B" title="Mat Siyah" onclick="selectPresetColor('#1E293B')"></span>
+                <span class="color-preset-item" style="background:#FFFFFF;border:1px solid #CBD5E1" title="Parlak Beyaz" onclick="selectPresetColor('#FFFFFF')"></span>
+                <span class="color-preset-item" style="background:#D4AF37" title="Altın Sarısı" onclick="selectPresetColor('#D4AF37')"></span>
+                <span class="color-preset-item" style="background:#94A3B8" title="Gümüş Gri" onclick="selectPresetColor('#94A3B8')"></span>
+                <span class="color-preset-item" style="background:#E2E8F0" title="Şeffaf Buzlu" onclick="selectPresetColor('#E2E8F0')"></span>
+                <span class="color-preset-item" style="background:#B76E79" title="Rose Gold" onclick="selectPresetColor('#B76E79')"></span>
+                <span class="color-preset-item" style="background:#DC2626" title="Kırmızı" onclick="selectPresetColor('#DC2626')"></span>
+                <span class="color-preset-item" style="background:#2563EB" title="Mavi / Lacivert" onclick="selectPresetColor('#2563EB')"></span>
+            </div>
+        </div>
+        <div class="color-menu-actions">
+            <button class="color-act-btn pick-custom" onclick="triggerUniversalColorPicker()" title="Paletten Renk Seç">🎨 Özel Renk</button>
+            <button class="color-act-btn delete-dot" onclick="deleteActiveColorDot()" title="Bu Rengi Tamamen Sil">🗑️ Rengi Sil</button>
+        </div>
+    </div>
 
     <!-- MAIN CATALOG CONTAINER -->
     <main class="catalog-container" id="catalogContainer">
@@ -3381,11 +3544,52 @@ html += f"""
             showToast('➕ Yeni özellik eklendi!');
         }}
 
-        // CAPS & COLOR SECTION EDITING (Altındaki yerler de)
-        function editColorDot(dotEl) {{
+        // CAPS & COLOR SECTION EDITING (Renklere Tıklayınca Açılan Menü & Silme)
+        function editColorDot(dotEl, event) {{
+            if (event) event.stopPropagation();
+            if (activeColorDot) activeColorDot.classList.remove('active-dot');
             activeColorDot = dotEl;
+            activeColorDot.classList.add('active-dot');
+
+            const popover = document.getElementById('colorMenuPopover');
+            if (!popover) return;
+            popover.classList.add('active');
+
+            if (window.innerWidth <= 600) {{
+                popover.style.left = '50%';
+                popover.style.top = '50%';
+                popover.style.transform = 'translate(-50%, -50%)';
+            }} else {{
+                const rect = dotEl.getBoundingClientRect();
+                let top = rect.bottom + 8;
+                let left = rect.left - 40;
+                if (left + 270 > window.innerWidth) left = window.innerWidth - 280;
+                if (left < 10) left = 10;
+                if (top + 160 > window.innerHeight) top = rect.top - 170;
+                popover.style.transform = 'none';
+                popover.style.top = top + 'px';
+                popover.style.left = left + 'px';
+            }}
+        }}
+
+        function selectPresetColor(hex) {{
+            if (!activeColorDot) return;
+            takeSnapshot();
+            activeColorDot.style.background = hex;
+            activeColorDot.title = 'Kapak Rengi (' + hex + ')';
+            if (hex.toUpperCase() === '#FFFFFF') {{
+                activeColorDot.style.border = '1px solid #CBD5E1';
+            }} else {{
+                activeColorDot.style.border = '';
+            }}
+            autoSaveToStorage();
+            showToast('🎨 Kapak rengi güncellendi: ' + hex);
+            closeColorMenu();
+        }}
+
+        function triggerUniversalColorPicker() {{
             const picker = document.getElementById('universalColorPicker');
-            picker.click();
+            if (picker) picker.click();
         }}
 
         function onColorPicked(e) {{
@@ -3393,8 +3597,30 @@ html += f"""
                 takeSnapshot();
                 activeColorDot.style.background = e.target.value;
                 activeColorDot.title = 'Özel Renk (' + e.target.value + ')';
+                activeColorDot.style.border = '';
+                autoSaveToStorage();
                 showToast('🎨 Kapak rengi güncellendi: ' + e.target.value);
+                closeColorMenu();
             }}
+        }}
+
+        function deleteActiveColorDot() {{
+            if (!activeColorDot) return;
+            takeSnapshot();
+            const dot = activeColorDot;
+            closeColorMenu();
+            dot.remove();
+            autoSaveToStorage();
+            showToast('🗑️ Kapak rengi silindi!');
+        }}
+
+        function closeColorMenu() {{
+            if (activeColorDot) {{
+                activeColorDot.classList.remove('active-dot');
+                activeColorDot = null;
+            }}
+            const popover = document.getElementById('colorMenuPopover');
+            if (popover) popover.classList.remove('active');
         }}
 
         function addColorDot(containerEl) {{
@@ -3403,17 +3629,20 @@ html += f"""
             const dot = document.createElement('span');
             dot.className = 'color-dot';
             dot.style.background = '#91CE17';
-            dot.title = 'Özel Renk (Değiştirmek için tıkla)';
-            dot.onclick = () => editColorDot(dot);
+            dot.title = 'Özel Renk (Düzenlemek veya silmek için dokunun)';
+            dot.onclick = (e) => editColorDot(dot, e);
             dot.oncontextmenu = (e) => deleteColorDot(e, dot);
             containerEl.appendChild(dot);
+            autoSaveToStorage();
             showToast('🎨 Yeni kapak rengi eklendi!');
+            editColorDot(dot);
         }}
 
         function deleteColorDot(e, dotEl) {{
-            e.preventDefault();
+            if (e) e.preventDefault();
             takeSnapshot();
             dotEl.remove();
+            autoSaveToStorage();
             showToast('🗑️ Kapak rengi silindi');
         }}
 
@@ -3744,7 +3973,23 @@ html += f"""
             document.querySelectorAll('[contenteditable="true"]').forEach(el => {{
                 el.oninput = () => autoSaveToStorage();
             }});
+
+            // Bind color dots
+            document.querySelectorAll('.color-dot').forEach(dot => {{
+                dot.onclick = (e) => editColorDot(dot, e);
+                dot.oncontextmenu = (e) => deleteColorDot(e, dot);
+            }});
         }}
+
+        // Close color popover when clicking anywhere outside
+        document.addEventListener('click', (e) => {{
+            const popover = document.getElementById('colorMenuPopover');
+            if (popover && popover.classList.contains('active')) {{
+                if (!popover.contains(e.target) && !e.target.classList.contains('color-dot')) {{
+                    closeColorMenu();
+                }}
+            }}
+        }});
 
         // SAVE CATALOG TO DISK (Works on both Local Server and Vercel)
         async function saveCatalogToDisk() {{
